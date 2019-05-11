@@ -26,10 +26,10 @@ public class stepDefs_InstabugLoginPage {
 		loginPage.clickOnLoginLink();		
 	}
 	
-	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	/*@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void user_enters_Email_and_Password(String email, String password) throws Exception {
 		loginPage.userEntersEmailandPassword(email,password);		
-	}
+	}*/
 	
 	@And("^User clicks on login button$")
 	public void user_clicks_on_login_button() throws Exception{
@@ -45,5 +45,34 @@ public class stepDefs_InstabugLoginPage {
 	@And("^User clicks log out	other sessions button")
 	public void user_clicks_logout_other_sessions_button() throws Exception{
 		loginPage.userClicksLogoutOtherSessionsButton();
+	}
+	
+	/*@And("^User clicks on login with google button$")
+	public void user_clicks_on_login_with_google_button() throws Exception{
+		loginPage.userClicksonLoginWithGoogleButton();
+	}
+	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_google_email_and_password(String googleEmail, String Password) throws Exception{
+		loginPage.userEntersGoogleEmailAndPassword(googleEmail, Password);
+	}
+	@And("^User clicks on Next button of google$")
+	public void user_clicks_on_Next_button_of_google() throws Exception{
+		loginPage.userClicksNextButtonOfGoogle();
+	}*/
+	@And("^User clicks on login with GitHub button")
+	public void user_clicks_on_login_with_GitHub_button() throws Exception{
+		loginPage.userClicksLoginWithGitHub();
+	}
+	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_github_email_and_password(String email, String password) throws Exception{
+		loginPage.userEntersGithubEmailAndPassword(email, password);
+	}
+	@And("^User clicks on Sign in button of github")
+	public void user_clicks_on_Sign_in_button_of_github() throws Exception{
+		loginPage.userClicksSigninButtonOfGithub();
+	}
+	@And("^User clicks on Authorize button")
+	public void user_clicks_on_Authorize_button() throws Exception{
+		loginPage.userClicksOnAuthorizeButton();
 	}
 }
