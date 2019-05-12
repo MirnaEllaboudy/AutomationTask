@@ -57,17 +57,17 @@ public class Instabug_LoginPage extends Login_BasePage {
 	public void userClicksLogoutOtherSessionsButton() {
 		driver.findElement(By.xpath("//button[contains(text(),'Log Out Other Sessions')]")).click();
 	}
-	/*public void userClicksonLoginWithGoogleButton() {
+	public void userClicksonLoginWithGoogleButton() {
 		driver.findElement(By.id("loginWithGoogleFirstDesign")).click();
    }
 	public void userEntersGoogleEmailAndPassword(String googleEmail, String Password){
 		driver.findElement(By.id("identifierId")).sendKeys(googleEmail);
-		driver.findElement(By.xpath("//[contains(text(),'التالي')]")).click();
+		driver.findElement(By.id("identifierNext")).click();
 		driver.findElement(By.name("password")).sendKeys(Password);
 	}
 	public void userClicksNextButtonOfGoogle() {
-		driver.findElement(By.xpath("//button[contains(text(),'التالي')]")).click();
-	}*/
+		driver.findElement(By.id("passwordNext]")).click();
+	}
 	
 	public void userClicksLoginWithGitHub() {
 		driver.findElement(By.id("loginWithGitHubFirstDesign")).click();

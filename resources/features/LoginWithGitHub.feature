@@ -7,6 +7,6 @@ Given I launch Chrome browser
 When I open Instabug Homepage
 Then I click on Login link
 And User clicks on login with GitHub button	
-And User enters "mirnamoustafa5@gmail.com" and "mirna19061994"
+And User enters github "mirnamoustafa5@gmail.com" and "mirna19061994"
 And User clicks on Sign in button of github
 And User clicks on Authorize button		

@@ -7,5 +7,5 @@ Given I launch Chrome browser
 When I open Instabug Homepage
 Then I click on Login link
 And User clicks on login with google button
-And User enters "mirnamoustafa5@gmail.com" and "mirna23041994"
+And User enters google "mirnatestuser5@gmail.com" and "mirnatest12345"
 And User clicks on Next button of google 

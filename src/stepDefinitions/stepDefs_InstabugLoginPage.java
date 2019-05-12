@@ -26,10 +26,10 @@ public class stepDefs_InstabugLoginPage {
 		loginPage.clickOnLoginLink();		
 	}
 	
-	/*@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void user_enters_Email_and_Password(String email, String password) throws Exception {
 		loginPage.userEntersEmailandPassword(email,password);		
-	}*/
+	}
 	
 	@And("^User clicks on login button$")
 	public void user_clicks_on_login_button() throws Exception{
@@ -47,23 +47,23 @@ public class stepDefs_InstabugLoginPage {
 		loginPage.userClicksLogoutOtherSessionsButton();
 	}
 	
-	/*@And("^User clicks on login with google button$")
+	@And("^User clicks on login with google button$")
 	public void user_clicks_on_login_with_google_button() throws Exception{
 		loginPage.userClicksonLoginWithGoogleButton();
 	}
-	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	@And("^User enters google \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void user_enters_google_email_and_password(String googleEmail, String Password) throws Exception{
 		loginPage.userEntersGoogleEmailAndPassword(googleEmail, Password);
 	}
 	@And("^User clicks on Next button of google$")
 	public void user_clicks_on_Next_button_of_google() throws Exception{
 		loginPage.userClicksNextButtonOfGoogle();
-	}*/
+	}
 	@And("^User clicks on login with GitHub button")
 	public void user_clicks_on_login_with_GitHub_button() throws Exception{
 		loginPage.userClicksLoginWithGitHub();
 	}
-	@And("^User enters \"([^\"]*)\" and \"([^\"]*)\"$")
+	@And("^User enters github \"([^\"]*)\" and \"([^\"]*)\"$")
 	public void user_enters_github_email_and_password(String email, String password) throws Exception{
 		loginPage.userEntersGithubEmailAndPassword(email, password);
 	}
