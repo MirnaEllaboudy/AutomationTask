@@ -9,4 +9,5 @@ Then I click on Login link
 And User clicks on login with GitHub button	
 And User enters github "mirnamoustafa5@gmail.com" and "mirna19061994"
 And User clicks on Sign in button of github
-And User clicks on Authorize button		
+And User is directed to the dashboard
+And User clicks on logout button		

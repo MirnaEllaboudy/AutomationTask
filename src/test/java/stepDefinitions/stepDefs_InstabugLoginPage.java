@@ -37,6 +37,15 @@ public class stepDefs_InstabugLoginPage {
 		
 	}
 	
+	@And("^User is directed to the dashboard$")
+	public void user_is_directed_to_the_dashboard() throws Exception{
+		loginPage.userIsDirectedToTheDashboard();
+	}
+	@And("^User clicks on logout button$")
+	public void user_clicks_on_logout_button() throws Exception{
+		loginPage.userClicksOnLogoutButton();
+	}
+	
 	@And("^error message is displayed$")
 	public void error_message_is_displayed() throws Exception{
 		loginPage.errorMessageDisplayed();
@@ -70,9 +79,5 @@ public class stepDefs_InstabugLoginPage {
 	@And("^User clicks on Sign in button of github")
 	public void user_clicks_on_Sign_in_button_of_github() throws Exception{
 		loginPage.userClicksSigninButtonOfGithub();
-	}
-	@And("^User clicks on Authorize button")
-	public void user_clicks_on_Authorize_button() throws Exception{
-		loginPage.userClicksOnAuthorizeButton();
 	}
 }

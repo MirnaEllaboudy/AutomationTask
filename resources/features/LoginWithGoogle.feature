@@ -9,3 +9,5 @@ Then I click on Login link
 And User clicks on login with google button
 And User enters google "mirnatestuser5@gmail.com" and "mirnatest12345"
 And User clicks on Next button of google 
+And User is directed to the dashboard
+And User clicks on logout button

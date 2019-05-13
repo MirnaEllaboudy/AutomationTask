@@ -8,6 +8,8 @@ When I open Instabug Homepage
 Then I click on Login link
 And User enters "mirnamoustafa5@gmail.com" and "mirna1234"
 And User clicks on login button
+And User is directed to the dashboard
+
 
 
 Scenario: Check that user cannot login with the same account multiple times(doesnot allow multiple sessions at one time).
@@ -18,3 +20,5 @@ And  User enters "mirnamoustafa5@gmail.com" and "mirna1234"
 And User clicks on login button
 And error message is displayed
 And User clicks log out	other sessions button
+And User is directed to the dashboard
+And User clicks on logout button
