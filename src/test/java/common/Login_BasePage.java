@@ -13,6 +13,11 @@ public class Login_BasePage {
 	public void waitForVisabilty(By locator, int time) {
         final WebDriverWait wait = new WebDriverWait(driver, time);
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-
-    }
+        }
+	
+	public void waitForURLNavigation(String url, int time) {
+		final WebDriverWait wait = new WebDriverWait(driver, time);
+		wait.until(ExpectedConditions.urlToBe(url));
+		
+	}
 }

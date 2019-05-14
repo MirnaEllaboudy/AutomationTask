@@ -62,7 +62,7 @@ public class Instabug_LoginPage extends Login_BasePage {
 	public void userIsDirectedToTheDashboard() {
 		try {	
 		String expectedResult= "https://dashboard.instabug.com/welcome-to-instabug";
-		waitForVisabilty(By.xpath("//div[contains(text(),'Explore Instabug')]"),30);
+		waitForURLNavigation("https://dashboard.instabug.com/welcome-to-instabug",30);
 		String result= driver.getCurrentUrl();
 		assertEquals(expectedResult,result );
 		System.out.println("Assertion passed, User is directed to the dashboard");
@@ -80,17 +80,53 @@ public class Instabug_LoginPage extends Login_BasePage {
 		System.out.println(profileOptions.get(lastOption).findElement(By.tagName("a")).getText());
 		profileOptions.get(lastOption).findElement(By.tagName("a")).click();
 	}
+	public void forgotPasswordIsDisplayed() {
+		try {
+		waitForVisabilty(By.xpath("//a[@href='/forgot']"), 30);
+		driver.findElement(By.xpath("//a[@href='/forgot']")).click();
+		String expectedResult= "https://dashboard.instabug.com/forgot";
+		waitForURLNavigation("https://dashboard.instabug.com/forgot",30);
+		String retrievedResult= driver.getCurrentUrl();
+		assertEquals(expectedResult,retrievedResult);
+		System.out.println("Assertion passed, User is directed to forgot password page");
+		}catch (Exception e) {
+			System.out.println("Assertion failed, user is not directed to Forgot Password page");
+		}
+	}
 	public void errorMessageDisplayed() {
+		try {
 		String expectedResult = "This account is already logged in";
 		waitForVisabilty(By.xpath("//div[contains(text(),'This account is already logged in')]"), 30);
 		String actualResult = driver.findElement(By.xpath("//div[contains(text(),'This account is already logged in')]")).getText();
 		assertEquals(expectedResult, actualResult);
 		System.out.println("Assertion passed for multiple session flow");
+		}catch(Exception e) {
+			System.out.println("Assertion failed, multiple session error message is not displayed");
+		}
 	}
 
 	public void userClicksLogoutOtherSessionsButton() {
 		waitForVisabilty(By.xpath("//button[contains(text(),'Log Out Other Sessions')]"), 30);
 		driver.findElement(By.xpath("//button[contains(text(),'Log Out Other Sessions')]")).click();
+	}
+	
+	public void userClicksOnBackToLogin() {
+		waitForVisabilty(By.xpath("//a[@href='/login']"), 30);
+		driver.findElement(By.xpath("//a[@href='/login']")).click();
+	}
+	
+	public void signUpIsDisplayed() {
+		try {
+		waitForVisabilty(By.xpath("//a[@href='/signup']"), 30);
+		driver.findElement(By.xpath("//a[@href='/signup']")).click();
+		String expectedResult="https://dashboard.instabug.com/signup";
+		waitForURLNavigation("https://dashboard.instabug.com/signup",30);
+		String retrievedResult= driver.getCurrentUrl();
+		assertEquals(expectedResult,retrievedResult);
+		System.out.println("Assertion passed, user is directed to the sign up page");
+		}catch (Exception e) {
+			System.out.println("Assertion Failed, user is not directed to the sign up page");
+		}
 	}
 
 	public void userClicksonLoginWithGoogleButton() {
@@ -127,5 +163,23 @@ public class Instabug_LoginPage extends Login_BasePage {
 	public void userClicksSigninButtonOfGithub() {
 		waitForVisabilty(By.xpath("//input[@type='submit']"), 30);
 		driver.findElement(By.xpath("//input[@type='submit']")).click();
+	}
+	
+	public void userClicksOnLoginWithMicrosoftButton() {
+		waitForVisabilty(By.className("c-authentication__microsoft-button"),30);
+		driver.findElement(By.className("c-authentication__microsoft-button")).click();
+	
+	}
+	
+	public void userEntersMicrosoftEmailAndPassword(String email, String password) {
+		waitForVisabilty(By.id("i0116"), 30);
+		driver.findElement(By.id("i0116")).sendKeys(email);
+		driver.findElement(By.id("idSIButton9")).click();
+		waitForVisabilty(By.id("i0118"), 30);
+		driver.findElement(By.id("i0118")).sendKeys(password);	
+	}
+	
+	public void userClicksOnNextButtonOfMicrosoft() {
+		driver.findElement(By.id("idSIButton9")).click();
 	}
 }

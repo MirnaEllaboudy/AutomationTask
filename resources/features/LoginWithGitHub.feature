@@ -3,7 +3,6 @@ This Feature verifies that user can login with multiple ways, by using email and
 or through google, GitHub or Microsoft
 
 Scenario: Check that user can login with GitHub.
-Given I launch Chrome browser
 When I open Instabug Homepage
 Then I click on Login link
 And User clicks on login with GitHub button	

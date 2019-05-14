@@ -16,9 +16,19 @@ Scenario: Check that user cannot login with the same account multiple times(does
 Given I launch Chrome browser
 When I open Instabug Homepage
 Then I click on Login link
-And  User enters "mirnamoustafa5@gmail.com" and "mirna1234"
-And User clicks on login button
+And User enters "mirnamoustafa5@gmail.com" and "mirna1234"
+And  User clicks on login button
 And error message is displayed
 And User clicks log out	other sessions button
 And User is directed to the dashboard
 And User clicks on logout button
+
+
+
+Scenario: Verify that Forgot password link and Sign up link are displayed
+When  I open Instabug Homepage
+Then I click on Login link
+And Forgot password is displayed
+And User clicks on back to login
+And Sign up is displayed
+

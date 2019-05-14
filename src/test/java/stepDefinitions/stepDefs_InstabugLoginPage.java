@@ -56,6 +56,19 @@ public class stepDefs_InstabugLoginPage {
 		loginPage.userClicksLogoutOtherSessionsButton();
 	}
 	
+	@And("^Forgot password is displayed$")
+	public void forgot_password_is_displayed() throws Exception{
+		loginPage.forgotPasswordIsDisplayed();
+	}
+	@And("^User clicks on back to login$")
+	public void user_clicks_on_back_to_login() throws Exception{
+		loginPage.userClicksOnBackToLogin();
+	}
+	@And("^Sign up is displayed$")
+	public void sign_up_is_displayed() throws Exception{
+		loginPage.signUpIsDisplayed();
+	}
+	
 	@And("^User clicks on login with google button$")
 	public void user_clicks_on_login_with_google_button() throws Exception{
 		loginPage.userClicksonLoginWithGoogleButton();
@@ -79,5 +92,17 @@ public class stepDefs_InstabugLoginPage {
 	@And("^User clicks on Sign in button of github")
 	public void user_clicks_on_Sign_in_button_of_github() throws Exception{
 		loginPage.userClicksSigninButtonOfGithub();
+	}
+	@And("^User clicks on login with microsoft button$")
+	public void user_clicks_on_login_with_microsoft_button() throws Exception{
+		loginPage.userClicksOnLoginWithMicrosoftButton();
+	}
+	@And("^User enters microsoft \"([^\"]*)\" and \"([^\"]*)\"$")
+	public void user_enters_microsoft_email_and_password(String email,String password) throws Exception {
+		loginPage.userEntersMicrosoftEmailAndPassword(email, password);
+	}
+	@And("^User clicks on Next button of microsoft$")
+	public void user_clicks_on_Next_button_of_microsoft() throws Exception{
+		loginPage.userClicksOnNextButtonOfMicrosoft();
 	}
 }
