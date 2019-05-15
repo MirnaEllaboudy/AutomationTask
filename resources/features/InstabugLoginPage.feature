@@ -1,6 +1,6 @@
 Feature: Instabug Login Page
 This Feature verifies that user can login with multiple ways, by using email and password, 
-or through google, GitHub or Microsoft
+or through google, GitHub or Microsoft and that user cannot login with invalid creditentials 
 
 Scenario: Check that user can login through username and password.
 Given I launch Chrome browser
@@ -32,4 +32,12 @@ Then I click on Login link
 And Forgot password is displayed
 And User clicks on back to login
 And Sign up is displayed
+
+
+Scenario: Verify that user cannot login with invalid creditentials 
+When I open Instabug Homepage
+Then I click on Login link
+And User enters "mirnamoustafa5@gmail.com" and "testtest"
+And User clicks on login button
+And Validation error message is displayed
 

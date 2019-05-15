@@ -105,4 +105,8 @@ public class stepDefs_InstabugLoginPage {
 	public void user_clicks_on_Next_button_of_microsoft() throws Exception{
 		loginPage.userClicksOnNextButtonOfMicrosoft();
 	}
+	@And("^Validation error message is displayed$")
+	public void validation_error_message_is_displayed() throws Exception{
+		loginPage.validationErrorMessageIsDisplayed();
+	}
 }

@@ -41,12 +41,14 @@ The Features folder consists of 4 files:
 
 - The project is set by default to a testing data, data (email, password, browser) can be changed from the feature file.
 
+- The IDE used is Eclipse IDE for Java Developers
+
 
 # How to run?
 
 - Import the project as Existing Maven Project
 
-- Right click to update the Maven dependencies.
+- Right click on the project name --> Maven--> update the Maven dependencies.
 
 To run with BDD JUnit:
 

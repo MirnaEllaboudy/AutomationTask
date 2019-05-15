@@ -185,4 +185,16 @@ public class Instabug_LoginPage extends Login_BasePage {
 	public void userClicksOnNextButtonOfMicrosoft() {
 		driver.findElement(By.id("idSIButton9")).click();
 	}
+	
+	public void validationErrorMessageIsDisplayed() {
+		try {
+			String expectedResult = "Your email and/or password are incorrect";
+			waitForVisabilty(By.className("callout"), 30);
+			String actualResult = driver.findElement(By.className("callout")).getText();
+			assertEquals(expectedResult, actualResult);
+			System.out.println("Assertion passed, validation error message is displayed");
+			}catch(Exception e) {
+				System.out.println("Assertion failed, validation error message is not displayed ");
+			}
+	}
 }
