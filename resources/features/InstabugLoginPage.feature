@@ -12,6 +12,7 @@ And User is directed to the dashboard
 
 
 
+
 Scenario: Check that user cannot login with the same account multiple times(doesnot allow multiple sessions at one time).
 Given I launch Chrome browser
 When I open Instabug Homepage

@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -20,21 +21,19 @@ public class Instabug_LoginPage extends Login_BasePage {
 		String userDir = System.getProperty("user.dir");
 
 		if (browser.equalsIgnoreCase("chrome")) {
-			String chromeDriverPath = userDir + File.separator + "src" + File.separator + "drivers" + File.separator
+			String chromeDriverPath = userDir + File.separator + "resources" + File.separator + "drivers" + File.separator
 					+ "chromedriver";
 			System.setProperty("webdriver.chrome.driver", chromeDriverPath);
 			ChromeOptions chromeOptions = new ChromeOptions();
 			chromeOptions.addArguments("--kiosk");
 			driver = new ChromeDriver(chromeOptions);
 		} else if (browser.equalsIgnoreCase("firefox")) {
-			String firefoxDriverPath = userDir + File.separator + "src" + File.separator + "drivers" + File.separator
+			String firefoxDriverPath = userDir + File.separator + "resources" + File.separator + "drivers" + File.separator
 					+ "geckodriver";
 			System.setProperty("webdriver.gecko.driver", firefoxDriverPath);
 			driver = new FirefoxDriver();
 			driver.manage().window().maximize();
-		} else if (browser.equalsIgnoreCase("safari")) {
-			driver = new SafariDriver();
-		}
+		} 				
 	}
 
 	public void openInstabugHomepage() {
@@ -71,18 +70,22 @@ public class Instabug_LoginPage extends Login_BasePage {
 		}
 	}
 	public void userClicksOnLogoutButton() {
-		waitForVisabilty(By.className("-profile"),30);
-		driver.findElement(By.className("-profile")).click();
+		if(driver.findElements(By.className("toast-close-button")).size() > 0) {
+			driver.findElement(By.className("toast-close-button")).click();
+		}
+		waitForVisabilty(By.className("-profile"),40);
+		System.out.println(driver.findElement(By.className("-profile")).findElement(By.tagName("span")).findElement(By.tagName("a")).getText());
+		driver.findElement(By.className("-profile")).findElement(By.tagName("span")).findElement(By.tagName("a")).click();
 		List<WebElement> profileOptions=driver.findElement(By.className("-profile")).findElements(By.tagName("li"));
 		int lastOption =profileOptions.size()-1;
 		System.out.println(lastOption);
-		System.out.println(profileOptions.get(lastOption).findElement(By.tagName("a")).getClass());
+		driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 		System.out.println(profileOptions.get(lastOption).findElement(By.tagName("a")).getText());
 		profileOptions.get(lastOption).findElement(By.tagName("a")).click();
 	}
 	public void forgotPasswordIsDisplayed() {
 		try {
-		waitForVisabilty(By.xpath("//a[@href='/forgot']"), 30);
+		waitForVisabilty(By.xpath("//a[@href='/forgot']"), 40);
 		driver.findElement(By.xpath("//a[@href='/forgot']")).click();
 		String expectedResult= "https://dashboard.instabug.com/forgot";
 		waitForURLNavigation("https://dashboard.instabug.com/forgot",30);

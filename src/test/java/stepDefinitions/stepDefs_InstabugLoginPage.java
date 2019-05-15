@@ -11,7 +11,7 @@ public class stepDefs_InstabugLoginPage {
 	
 	Instabug_LoginPage loginPage = new Instabug_LoginPage();
 	
-	@Given("^I launch (Chrome|Firefox|Safari) browser$")
+	@Given("^I launch (Chrome|FireFox) browser$")
 	public void I_Launch_browser(String browser)throws Exception {
 		loginPage.launchBrowser(browser);		
 	}
